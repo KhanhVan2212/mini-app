@@ -114,7 +114,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .category-item {
@@ -151,7 +151,6 @@ body {
 
 .indicator-dot {
     position: relative;
-
     width: 24px;
     height: 4px;
     border-radius: 9999px;
@@ -174,7 +173,7 @@ body {
 .indicator-banner {
     position: absolute;
     gap: 2px;
-    bottom: 30px;
+    bottom: 10px;
     left: 46%;
     display: flex;
     justify-content: center;
@@ -199,6 +198,7 @@ body {
 /* Food */
 
 .food-section {
+    margin-bottom: 16px;
     padding-left: 16px;
 }
 
@@ -206,7 +206,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 16px 0 12px 0;
+    padding: 16px 0 12px 0;
 }
 
 .section-title {
@@ -224,6 +224,17 @@ body {
     width: 24px;
     height: 24px;
     font-size: 20px;
+}
+
+.section-title-text {
+    color: var(--Text-neutral-strong, #141414);
+
+    font-family: var(--Font-family-font-family-display, Inter);
+    font-size: var(--Font-size-text-16, 16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--Line-Height-text-16, 24px); /* 150% */
+    letter-spacing: var(--Letter-spacing-None, 0px);
 }
 
 .view-all-link {
@@ -252,8 +263,6 @@ body {
     align-items: center;
 }
 
-
-
 /* Brand Info */
 .brand-info {
     display: flex;
@@ -267,7 +276,7 @@ body {
 .brand-header {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     margin-bottom: 6px;
 }
 
@@ -292,17 +301,22 @@ body {
 }
 
 .brand-name {
-    font-size: 12px;
-    color: #666;
+    color: #939395;
+    font-size: 11px;
+    font-style: normal;
     font-weight: 500;
+    line-height: 16px; /* 145.455% */
+    letter-spacing: -0.165px;
 }
 
 .offer-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 8px;
-    line-height: 1.3;
+    color: var(--Text-neutral-strong, #141414);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 138.462% */
+    letter-spacing: -0.065px;
+    margin-bottom: 6px;
 }
 
 .price-info {
@@ -311,18 +325,160 @@ body {
     gap: 8px;
 }
 
-.original-price {
-    font-size: 12px;
-    color: #999;
-    text-decoration: line-through;
-}
-
 .sale-price {
-    font-size: 14px;
+    color: var(--Text-primary, #db3d42);
+
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
     font-weight: 600;
-    color: #e74c3c;
+    line-height: 18px; /* 138.462% */
+    letter-spacing: -0.13px;
 }
 
 .fire-emoji {
     font-size: 16px;
+}
+
+/* Shopping Cart */
+.custom-box {
+    position: fixed;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    width: 347px;
+    max-width: 375px;
+    margin: 0 auto;
+    height: 44px;
+    padding: 6px;
+    background-color: #fff0f0; /* thay bằng màu cụ thể nếu không dùng biến */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0px 0px 8px 0px rgba(177, 176, 192, 0.42);
+    outline: 1px solid rgba(239, 68, 68, 0.1); /* outline-red-500/10 */
+    outline-offset: -1px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px; /* gap-4 = 4 * 0.25rem = 1rem */
+}
+
+.custom-container {
+    padding: 6px;
+    background-color: #ffffff; /* hoặc thay bằng màu cụ thể nếu không dùng biến */
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    justify-content: flex-start; /* justify-start */
+    align-items: center; /* items-center */
+    gap: 0.5rem; /* gap-2 = 2 * 0.25rem */
+}
+.custom-text {
+    display: flex;
+    justify-content: center;
+    color: var(
+        --Text-neutral-strong
+    ); /* Tailwind dùng biến token cho màu sắc */
+    font-size: 0.75rem; /* text-xs = 12px */
+    font-weight: 500; /* font-medium */
+    font-family: "Inter", sans-serif;
+    line-height: 1;
+}
+
+.price {
+    padding: 8px; /* p-2 = 8px */
+    background-color: #db3d42;
+    border-radius: 0.375rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px; /* gap-2 = 8px */
+}
+
+.price-container {
+    align-self: stretch; /* self-stretch */
+    display: inline-flex; /* inline-flex */
+    justify-content: flex-start; /* justify-start */
+    align-items: center; /* items-center */
+    gap: 0.25rem; /* gap-1 = 4px */
+}
+
+.price-text {
+    display: flex; /* flex */
+    justify-content: flex-start; /* justify-start */
+    align-items: center; /* items-center */
+    gap: 0.25rem; /* gap-1 = 4px */
+}
+
+.price-value {
+    justify-content: flex-start;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    line-height: 1;
+}
+
+.nav-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 375px;
+    margin: 0 auto;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: white;
+    z-index: 1000;
+    border-top: 1px solid #e5e7eb;
+}
+
+.nav-item {
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon-wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.label.red {
+    color: #ef4444; /* text-red-500 */
+}
+
+.label.gray {
+    color: #a3a3a3; /* text-neutral-400 */
 }
