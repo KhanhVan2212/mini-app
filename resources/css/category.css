@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.custom-wrapper {
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.custom-arrow {
+    width: 24px; /* w-6 */
+    height: 24px; /* h-6 */
+    position: relative;
+    transform-origin: top left;
+    overflow: hidden;
+}
+
+.custom-title-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+}
+
+.custom-title {
+    justify-content: flex-start;
+    color: #171717; /* text-neutral-900 */
+    font-size: 14px; /* text-sm */
+    font-weight: 600; /* font-semibold */
+    font-family: "Inter", sans-serif;
+    line-height: 1.25; /* leading-tight */
+}
+.menu-button {
+    display: flex;
+    justify-content: center;
+    height: 24px;
+    width: 61px;
+    padding: 2px 6px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    background: #0000002e;
+    backdrop-filter: blur(4px);
+}
+
+.menu-icon {
+    height: 20px;
+}
+
+.line-button {
+    color: #ffffff70;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+.remove-icon {
+    height: 20px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 16px 16px 12px 16px; /* px-4 pt-4 pb-3 */
+    background-color: #ffffff; /* bg-Background-Canvas (giả sử là white) */
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px; /* gap-3 */
+}
+
+.tags-container {
+  
+    overflow-x: auto;
+    overflow-y: hidden;
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px; /* gap-2 */
+    flex-wrap: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db transparent;
+}
+
+.tags-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.tags-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tags-container::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 2px;
+}
+
+.tags-container::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+}
+
+.tag {
+    padding: 8px;
+    background-color: #f4f4f5; /* bg-zinc-100 */
+    border-radius: 6px; /* rounded-md */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+    height: 32px;
+}
+
+.tag.active {
+    background-color: #ffe4e6; /* bg-rose-100 */
+}
+
+.tag-text {
+    justify-content: flex-start;
+    color: #a3a3a3; /* text-neutral-400 */
+    font-size: 12px; /* text-xs */
+    font-weight: 400; /* font-normal */
+    line-height: 1; /* leading-none */
+}
+
+.tag.active .tag-text {
+    color: #ef4444; /* text-red-500 */
+}
+/* Container tìm kiếm */
+.search-container {
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px; /* gap-2 */
+}
+
+/* Input tìm kiếm */
+.search-input {
+    height: 36px;
+    flex: 1;
+    padding: 9px 12px;
+    border-radius: 8px;
+    outline: 1px solid #e5e7eb;
+    outline-offset: -1px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-icon {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Placeholder text */
+.search-placeholder {
+    justify-content: flex-start;
+    color: #a3a3a3; /* text-neutral-400 */
+    font-size: 12px; /* text-xs */
+    font-weight: 400; /* font-normal */
+    font-family: "Inter", sans-serif;
+    line-height: 1; /* leading-none */
+}
+
+/* Nút filter */
+.filter-button {
+    width: 36px;
+    height: 36px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    outline: 1px solid #e5e7eb;
+    outline-offset: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.food-section {
+    margin-bottom: 16px;
+    padding: 0 16px;
+}
+
+/* Voucher Cards */
+.voucher-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 16px;
+    margin-bottom: 12px;
+    margin-top: 16px;
+}
+
+.cart {
+    width: 165px;
+    height: 257px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Brand Info */
+.brand-info {
+    display: flex;
+    gap: 12px;
+}
+
+.brand-item {
+    flex: 1;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+.brand-logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.starbucks-logo {
+    background: #00704a;
+    color: white;
+}
+
+.mixue-logo {
+    background: #e74c3c;
+    color: white;
+}
+
+.brand-name {
+    color: #939395;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 145.455% */
+    letter-spacing: -0.165px;
+}
+
+.offer-title {
+    color: var(--Text-neutral-strong, #141414);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 138.462% */
+    letter-spacing: -0.065px;
+    margin-bottom: 6px;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+}
+
+.sale-price {
+    color: var(--Text-primary, #db3d42);
+
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px; /* 138.462% */
+    letter-spacing: -0.13px;
+}
+
+.fire-emoji {
+    font-size: 16px;
+}
+
+.payment-container {
+    position: fixed;
+    height: 60px;
+    bottom: 0px;
+    width: 100%;
+    max-width: 450px;
+    display: inline-flex;
+    background-color: white;
+    justify-content: space-between;
+    height: 60px;
+    align-self: stretch;
+    padding: 12px 16px 8px 16px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-container {
+    width: 2.25rem; /* w-9 */
+    height: 2.25rem; /* h-9 */
+    position: relative;
+    background-color: #fff0f0; /* bg-Background-Primary-flat */
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem; /* gap-3 */
+}
+
+.shopping-icon {
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    position: relative;
+    overflow: hidden;
+}
+
+.shopping-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.notification-badge {
+    width: 1rem; /* w-4 */
+    height: 1rem; /* h-4 */
+    left: 1.625rem; /* left-[26px] */
+    top: -0.375rem; /* top-[-6px] */
+    position: absolute;
+    background-color: #ef4444; /* bg-red-500 */
+    border-radius: 999px; /* rounded-[999px] */
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem; /* gap-2.5 */
+}
+
+.badge-text {
+    align-self: stretch;
+    text-align: center;
+    color: white;
+    font-size: 0.625rem; /* text-[10px] */
+    font-weight: 500; /* font-medium */
+    line-height: 1; /* leading-none */
+}
+
+.right-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+    gap: 0.5rem; /* gap-2 */
+}
+
+.purchase-info {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.25rem; /* gap-1 */
+}
+
+.purchase-label {
+    text-align: right;
+    color: #58585a;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.amount-container {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.125rem; /* gap-0.5 */
+}
+
+.amount-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.125rem; /* gap-0.5 */
+}
+
+.amount-text {
+    color: #db3d42; /* text-Text-primary */
+    font-size: 14px; /* text-sm */
+    font-weight: 600; /* font-semibold */
+    font-family: "Inter", sans-serif;
+    line-height: 1.25; /* leading-tight */
+}
+
+.currency-icon {
+    width: 1rem; /* w-4 */
+    height: 1rem; /* h-4 */
+}
+
+.payment-button {
+    padding: 10px;
+    background-color: #db3d42;
+    border-radius: 0.375rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem; /* gap-2 */
+    border: none;
+    cursor: pointer;
+}
+
+.button-content {
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25rem; /* gap-1 */
+}
+
+.button-text {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}

@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <!-- Header -->
     <div class="background-header">
     </div>
@@ -37,7 +36,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Search Bar -->
         <div class="search-container">
             <div class="search-bar">
@@ -45,12 +43,11 @@
                 <input type="text" class="search-input" placeholder="Search voucher, brand,...">
             </div>
         </div>
-
         <!-- Categories -->
         <div class="categories">
             <div>
                 <div class="category-grid">
-                    <a href="#" class="category-item">
+                    <a href="/category" class="category-item">
                         <div class="category-icon all"><img src="./images/all-icon.svg" alt=""></div>
                         <span class="category-label">Tất cả</span>
                     </a>
@@ -85,7 +82,7 @@
     </div>
     {{-- Banner --}}
     <div class="banner">
-        <img src="./images/banner.png" alt="">
+        <img src="./images/banner.png" alt="" style="width: 100%;">
         <div class="indicator-banner">
             <div class="dot-banner"></div>
             <div class="dot"></div>
@@ -107,7 +104,7 @@
         </div>
 
         <!-- Voucher Cards -->
-        <div class="voucher-flex">
+        <div onclick="window.location.href = '/detail'" class="voucher-flex">
             <div class="cart">
                 <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
@@ -153,7 +150,7 @@
     </div>
 
     <!-- Travel     -->
-    <div class="food-section">
+    <div onclick="window.location.href = '/detail'" class="food-section">
         <div class="section-header">
             <div class="section-title">
                 <span class="section-title-icon"><img src="./images/travel-icon.svg" alt="" width="24px"
@@ -207,7 +204,7 @@
     </div>
 
     <!-- Game -->
-    <div class="food-section">
+    <div onclick="window.location.href = '/detail'" class="food-section">
         <div class="section-header">
             <div class="section-title">
                 <span class="section-title-icon"><img src="./images/game-icon.svg" alt="" width="24px"
@@ -262,7 +259,7 @@
 
     <!-- Heart -->
 
-    <div class="food-section">
+    <div onclick="window.location.href = '/detail'" class="food-section">
         <div class="section-header">
             <div class="section-title">
                 <span class="section-title-icon"><img src="./images/heart-icon.svg" alt="" width="24px"
@@ -316,10 +313,11 @@
     </div>
 
     <!-- Study -->
-    <div class="food-section">
+    <div onclick="window.location.href = '/detail'" class="food-section">
         <div class="section-header">
             <div class="section-title">
-                <span class="section-title-icon"><img src="./images/study.svg" alt="" width="24px" height="24px"></span>
+                <span class="section-title-icon"><img src="./images/study.svg" alt="" width="24px"
+                        height="24px"></span>
                 <span class="section-title-text">Giáo dục</span>
             </div>
             <a href="#" class="view-all-link">Xem tất cả</a>
@@ -370,7 +368,7 @@
 
     <!-- Fashion -->
 
-    <div class="food-section">
+    <div onclick="window.location.href = '/detail'" class="food-section">
         <div class="section-header">
             <div class="section-title">
                 <span class="section-title-icon"><img src="./images/fashion.svg" alt="" width="24px"
@@ -425,7 +423,7 @@
 
     <!-- Beautiful -->
 
-    <div class="food-section">
+    <div onclick="window.location.href = '/detail'" class="food-section">
         <div class="section-header">
             <div class="section-title">
                 <span class="section-title-icon"><img src="./images/beatiful.svg" alt="" width="24px"
@@ -480,10 +478,11 @@
 
     <!-- Card Phone -->
 
-    <div class="food-section" style="margin-bottom: 110px;">
+    <div onclick="window.location.href = '/detail'" class="food-section" style="margin-bottom: 90px;">
         <div class="section-header">
             <div class="section-title">
-                <span class="section-title-icon"><img src="./images/phone.svg" alt="" width="24px" height="24px"></span>
+                <span class="section-title-icon"><img src="./images/phone.svg" alt="" width="24px"
+                        height="24px"></span>
                 <span class="section-title-text">Nạp thẻ điện thoại</span>
             </div>
             <a href="#" class="view-all-link">Xem tất cả</a>

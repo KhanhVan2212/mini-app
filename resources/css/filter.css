@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.filter {
+    width: 100%;
+    height: 48px;
+    align-self: stretch;
+    padding-left: 1rem; /* pl-4 */
+    padding-right: 0.625rem; /* pr-2.5 */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem; /* py-2 */
+    display: inline-flex; /* inline-flex */
+    justify-content: space-between; /* justify-between */
+    align-items: center; /* items-center */
+}
+
+/* CSS cho tiêu đề */
+.filter-title {
+    justify-content: flex-start; /* justify-start */
+    color: #141414; /* text-Text-neutral-strong */
+    font-size: 1rem; /* text-base */
+    font-weight: 600; /* font-semibold */
+    line-height: 1.5; /* leading-normal */
+}
+
+.close-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px; /* w-8 */
+    height: 32px; /* h-8 */
+    padding: 0.5rem; /* p-2 */
+}
+
+/* CSS cho icon wrapper */
+.icon-wrapper {
+    width: 24px; /* w-6 */
+    height: 24px; /* h-6 */
+}
+
+/* CSS cho icon image */
+.close-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.filter-container {
+    padding: 4px 16px 100px 16px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.filter-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.section-header {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title {
+    flex: 1;
+    justify-content: flex-start;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.view-more {
+    text-align: right;
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    width: 100%;
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.filter-button {
+    padding: 8px 12px;
+    background-color: white;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.filter-button.active {
+    border-color: #ef4444;
+}
+
+.filter-button .text {
+    text-align: center;
+    justify-content: flex-start;
+    color: #111827;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.filter-button.active .text {
+    color: #ef4444;
+}
+
+.location-button {
+    flex: 1;
+    min-width: 144px;
+    max-height: 32px;
+    min-height: 32px;
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.location-button:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.location-button.active {
+    border-color: #ef4444;
+}
+
+.location-button .text {
+    text-align: center;
+    justify-content: flex-start;
+    color: #111827;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.location-button.active .text {
+    color: #ef4444;
+}
+
+.price-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.currency-dropdown {
+    align-self: stretch;
+    height: 36px;
+    padding: 8px 10px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.currency-dropdown:hover {
+    border-color: #d1d5db;
+}
+
+.currency-text {
+    flex: 1;
+    justify-content: flex-start;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.dropdown-icon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.price-range {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.slider-container {
+    align-self: stretch;
+    height: 16px;
+    position: relative;
+}
+
+.slider-track {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 6px;
+    background-color: #ef4444;
+    border-radius: 999px;
+}
+
+.slider-handle {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #ef4444;
+    position: absolute;
+    top: 2px;
+    cursor: pointer;
+}
+
+.slider-handle:first-of-type {
+    left: 1px;
+}
+
+.slider-handle:last-of-type {
+    right: 1px;
+}
+
+.price-labels {
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-label {
+    color: #4b5563;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.sort-button {
+    flex: 1;
+    min-width: 144px;
+    max-width: 167px;
+    max-height: 32px;
+    min-height: 32px;
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-button:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.sort-button.active {
+    border-color: #ef4444;
+}
+
+.sort-button .text {
+    text-align: center;
+    justify-content: flex-start;
+    color: #111827;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.sort-button.active .text {
+    color: #ef4444;
+}
+
+.sort-button:last-child {
+    width: 160px;
+}
+
+/* Container chính */
+.button-container {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    max-width: 450px;
+    padding: 8px 16px;
+    display: flex;
+    gap: 8px;
+}
+
+/* Base button styles */
+.button {
+    flex: 1;
+    max-height: 44px;
+    min-height: 44px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Reset button - Neutral/Soft */
+.button-reset {
+    background-color: rgba(128, 128, 128, 0.05);
+    color: #666666;
+}
+
+.button-reset:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.button-reset:active {
+    background-color: rgba(128, 128, 128, 0.15);
+    transform: scale(0.98);
+}
+
+/* Confirm button - Primary/Filled */
+.button-confirm {
+    background-color: #ef4444;
+    color: white;
+}
+
+.button-confirm:hover {
+    background-color: #dc2626;
+}
+
+.button-confirm:active {
+    background-color: #b91c1c;
+    transform: scale(0.98);
+}
+
+/* Text styling */
+.button-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+}
+
