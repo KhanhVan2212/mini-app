@@ -25,7 +25,7 @@
     </div>
 
     <div class="filter-container">
-        <div class="filter-section">
+        {{-- <div class="filter-section">
             <div class="section-header">
                 <div class="section-title">Loại ưu đãi</div>
             </div>
@@ -49,50 +49,23 @@
                     <div class="text">Flash Sale</div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Categories Section -->
         <div class="filter-section">
             <div class="section-header">
                 <div class="section-title">Danh mục</div>
             </div>
+            <?php
+            $filters = [['text' => 'Tất cả', 'active' => false], ['text' => 'Độc quyền', 'active' => false], ['text' => 'Ẩm thực', 'active' => true], ['text' => 'Di chuyển', 'active' => false], ['text' => 'Làm đẹp', 'active' => false], ['text' => 'Viễn thông', 'active' => false], ['text' => 'Giải trí', 'active' => false], ['text' => 'Giáo dục', 'active' => true], ['text' => 'Du lịch', 'active' => false], ['text' => 'Mua sắm', 'active' => true], ['text' => 'Sức khỏe', 'active' => false], ['text' => 'Khách sạn', 'active' => false]];
+            ?>
+
             <div class="button-group">
-                <div class="filter-button">
-                    <div class="text">Tất cả</div>
+                <?php foreach ($filters as $filter): ?>
+                <div class="filter-button<?= $filter['active'] ? ' active' : '' ?>">
+                    <div class="text"><?= htmlspecialchars($filter['text']) ?></div>
                 </div>
-                <div class="filter-button">
-                    <div class="text">Độc quyền</div>
-                </div>
-                <div class="filter-button active">
-                    <div class="text">Ẩm thực</div>
-                </div>
-                <div class="filter-button">
-                    <div class="text">Di chuyển</div>
-                </div>
-                <div class="filter-button">
-                    <div class="text">Làm đẹp</div>
-                </div>
-                <div class="filter-button">
-                    <div class="text">Viễn thông</div>
-                </div>
-                <div class="filter-button">
-                    <div class="text">Giải trí</div>
-                </div>
-                <div class="filter-button active">
-                    <div class="text">Giáo dục</div>
-                </div>
-                <div class="filter-button">
-                    <div class="text">Du lịch</div>
-                </div>
-                <div class="filter-button active">
-                    <div class="text">Mua sắm</div>
-                </div>
-                <div class="filter-button">
-                    <div class="text">Sức khỏe</div>
-                </div>
-                <div class="filter-button">
-                    <div class="text">Khách sạn</div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -100,7 +73,7 @@
         <div class="filter-section">
             <div class="section-header">
                 <div class="section-title">Vị trí</div>
-                <div class="view-more">Xem thêm</div>
+                <div onclick="window.location.href = '/country'" class="view-more">Xem thêm</div>
             </div>
             <div class="button-group">
                 <div class="location-button active">

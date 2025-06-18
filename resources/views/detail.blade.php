@@ -14,13 +14,16 @@
     @vite(['resources/css/detail.css'])
 </head>
 
+
 <body>
     <div
         style="
-    height: 174px;
-    background-image: url('./images/bg-vouched.svg') ;
-    background-size: contain;
-    ">
+  height: 174px;
+  background-image: url('./images/bg-vouched.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+">
         {{-- <img src="./images/bg-vouched.svg" alt="" style="width: 100%; display: block;"> --}}
 
         <div class="custom-wrapper">
@@ -93,7 +96,7 @@
                     </div>
                     <div class="more-countries">
                         <div class="more-countries-text">+99</div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -174,7 +177,7 @@
                 <div class="purchase-label">Purchase</div>
                 <div class="amount-container">
                     <div class="amount-wrapper">
-                        <div class="amount-text">1.00.202.000.000</div>
+                        <div class="amount-text">1.00.202</div>
                         <img class="currency-icon" src="./images/hyra.svg" alt="Currency" />
                     </div>
                 </div>
@@ -188,7 +191,191 @@
             </button>
         </div>
     </div>
+    <div class="modal-overlay">
+        <div class="cart-modal">
+            <div class="cart-header">
+                <div class="cart-title-container">
+                    <div class="cart-title">Giỏ hàng</div>
+                </div>
+                <div class="cart-close">
+                    <img src="./images/close.svg" alt="">
+                </div>
+            </div>
+            <?php
+            $cartItems = [
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'Starbucks',
+                    'quantity' => 'x1',
+                    'description' => 'Voucher mua KFC với giá 19.000đ',
+                    'price' => '30.000đ',
+                    'purchase' => '200.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'Highlands',
+                    'quantity' => 'x2',
+                    'description' => 'Voucher Highlands 50%',
+                    'price' => '50.000đ',
+                    'purchase' => '300.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'KFC',
+                    'quantity' => 'x1',
+                    'description' => 'Combo gà rán ưu đãi 70k',
+                    'price' => '70.000đ',
+                    'purchase' => '400.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'The Coffee House',
+                    'quantity' => 'x3',
+                    'description' => 'Tặng trà sữa size lớn',
+                    'price' => '40.000đ',
+                    'purchase' => '250.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'Phúc Long',
+                    'quantity' => 'x1',
+                    'description' => 'Mua 1 tặng 1 món bất kỳ',
+                    'price' => '60.000đ',
+                    'purchase' => '350.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'Lotteria',
+                    'quantity' => 'x2',
+                    'description' => 'Ưu đãi burger + nước',
+                    'price' => '45.000đ',
+                    'purchase' => '150.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'CGV',
+                    'quantity' => 'x1',
+                    'description' => 'Vé xem phim 2D giá rẻ',
+                    'price' => '75.000đ',
+                    'purchase' => '500.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+                [
+                    'image' => 'image-fashion.svg',
+                    'brand_icon' => 'starbucks.svg',
+                    'brand_name' => 'Vincom',
+                    'quantity' => 'x1',
+                    'description' => 'Voucher giảm giá mua sắm',
+                    'price' => '90.000đ',
+                    'purchase' => '600.000',
+                    'currency_icon' => 'hyra.svg',
+                ],
+            ];
+            ?>
+            <div class="cart-modal-content">
+                <!-- Cart Item 1 -->
+                <?php foreach ($cartItems as $item): ?>
+                <div class="cart-item-wrapper">
+                    <div class="cart-item">
+                        <div class="cart-item-scrollable">
+                            <div class="cart-item-content">
+                                <div class="item-image">
+                                    <img class="item-img" src="./images/<?= htmlspecialchars($item['image']) ?>"
+                                        alt="<?= htmlspecialchars($item['brand_name']) ?>" />
+                                </div>
+                                <div class="item-details">
+                                    <div class="item-info">
+                                        <div class="item-brand-info">
+                                            <div class="item-brand-header">
+                                                <div class="item-brand-row">
+                                                    <div class="item-brand-icon">
+                                                        <img src="./images/<?= htmlspecialchars($item['brand_icon']) ?>"
+                                                            alt="<?= htmlspecialchars($item['brand_name']) ?>"
+                                                            width="16px" height="16px" />
+                                                    </div>
+                                                    <div class="item-brand-name">
+                                                        <?= htmlspecialchars($item['brand_name']) ?>
+                                                    </div>
+                                                    <div class="item-quantity">
+                                                        <?= htmlspecialchars($item['quantity']) ?></div>
+                                                </div>
+                                                <div class="item-description">
+                                                    <div class="item-desc-text">
+                                                        <?= htmlspecialchars($item['description']) ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-pricing">
+                                        <div class="price-section-left">
+                                            <div class="price-label">Price:</div>
+                                            <div class="price-value-cart"><?= htmlspecialchars($item['price']) ?></div>
+                                        </div>
+                                        <div class="purchase-section">
+                                            <div class="purchase-label">Purchase:</div>
+                                            <div class="purchase-value">
+                                                <div class="purchase-amount"><?= htmlspecialchars($item['purchase']) ?>
+                                                </div>
+                                                <img class="currency-icon"
+                                                    src="./images/<?= htmlspecialchars($item['currency_icon']) ?>"
+                                                    alt="Currency" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-remove">
+                                <span>Xóa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
 
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lấy các elements
+        const addToCartBtn = document.querySelector('.add-to-cart-btn');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const cartClose = document.querySelector('.cart-close');
+
+        addToCartBtn.addEventListener('click', function() {
+            modalOverlay.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+
+        cartClose.addEventListener('click', function() {
+            modalOverlay.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        });
+
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
+

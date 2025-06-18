@@ -232,7 +232,6 @@ body {
     overflow: hidden;
 }
 
-
 .price-range {
     align-self: stretch;
     display: flex;
@@ -294,8 +293,7 @@ body {
     flex: 1;
     min-width: 144px;
     max-width: 167px;
-    max-height: 32px;
-    min-height: 32px;
+    height: 32px;
     padding: 12px 10px;
     border-radius: 8px;
     border: 1px solid #d1d5db;
@@ -398,4 +396,3 @@ body {
     line-height: normal;
     white-space: nowrap;
 }
-

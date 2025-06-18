@@ -82,7 +82,7 @@
     <div class="food-section">
         <!-- Voucher Cards -->
         <div class="voucher-flex">
-            <div class="cart">
+            <div onclick="window.location.href = '/detail'" class="cart">
                 <img src="./images/image-travel1.svg" alt="" style="padding-bottom: 8px" width="165px">
                 <div class="brand-item">
                     <div class="brand-header">

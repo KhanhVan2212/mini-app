@@ -14,6 +14,9 @@
     @vite(['resources/css/country.css'])
 
 </head>
+<?php
+$countries = [['img' => '1.svg', 'name' => 'Việt Nam'], ['img' => '2.svg', 'name' => 'English'], ['img' => '3.svg', 'name' => 'Deutsch'], ['img' => '4.svg', 'name' => 'India'], ['img' => '5.svg', 'name' => 'Korea'], ['img' => '6.svg', 'name' => 'Japan'], ['img' => '7.svg', 'name' => 'ThaiLand'], ['img' => '8.svg', 'name' => 'Indonesia'], ['img' => '9.svg', 'name' => 'Singapor'], ['img' => '1.svg', 'name' => 'Français'], ['img' => '1.svg', 'name' => 'Nederlands'], ['img' => '1.svg', 'name' => 'Ελληνικά'], ['img' => '1.svg', 'name' => 'Turk'], ['img' => '1.svg', 'name' => 'China'], ['img' => '1.svg', 'name' => 'Tailwan'], ['img' => '1.svg', 'name' => 'Svenska']];
+?>
 
 <body>
     <div class="container">
@@ -37,117 +40,14 @@
         </div>
 
         <div class="country-list">
+            <?php foreach ($countries as $country): ?>
             <div class="country-item">
                 <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
+                    <img src="./images/<?= htmlspecialchars($country['img']) ?>" alt="">
                 </div>
-                <div class="country-name">Việt Nam</div>
+                <div class="country-name"><?= htmlspecialchars($country['name']) ?></div>
             </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/2.svg" alt="">
-                </div>
-                <div class="country-name">English</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/3.svg" alt="">
-                </div>
-                <div class="country-name">Deutsch</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/4.svg" alt="">
-                </div>
-                <div class="country-name">India</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/5.svg" alt="">
-                </div>
-                <div class="country-name">Korea</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/6.svg" alt="">
-                </div>
-                <div class="country-name">Japan</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/7.svg" alt="">
-                </div>
-                <div class="country-name">ThaiLand</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/8.svg" alt="">
-                </div>
-                <div class="country-name">Indonesia</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/9.svg" alt="">
-                </div>
-                <div class="country-name">Singapor</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
-                </div>
-                <div class="country-name">Français</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
-                </div>
-                <div class="country-name">Nederlands</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
-                </div>
-                <div class="country-name">Ελληνικά</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
-                </div>
-                <div class="country-name">Turk</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
-                </div>
-                <div class="country-name">China</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
-                </div>
-                <div class="country-name">Tailwan</div>
-            </div>
-
-            <div class="country-item">
-                <div class="flag-container">
-                    <img src="./images/1.svg" alt="">
-                </div>
-                <div class="country-name">Svenska</div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>

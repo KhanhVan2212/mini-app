@@ -45,49 +45,60 @@
         </div>
         <!-- Categories -->
         <div class="categories">
-            <div>
-                <div class="category-grid">
-                    <a href="/category" class="category-item">
-                        <div class="category-icon all"><img src="./images/all-icon.svg" alt=""></div>
-                        <span class="category-label">Tất cả</span>
-                    </a>
-                    <a href="#" class="category-item">
-                        <div class="category-icon all"><img src="./images/food-icon.svg" alt=""></div>
-                        <span class="category-label">Ẩm thực</span>
-                    </a>
-                    <a href="#" class="category-item">
-                        <div class="category-icon all"><img src="./images/travel-icon.svg" alt=""></div>
-                        <span class="category-label">Du lịch</span>
-                    </a>
-                    <a href="#" class="category-item">
-                        <div class="category-icon all"><img src="./images/game-icon.svg" alt=""></div>
-                        <span class="category-label">Giải trí</span>
-                    </a>
-                    <a href="#" class="category-item">
-                        <div class="category-icon all"><img src="./images/heart-icon.svg" alt=""></div>
-                        <span class="category-label">Sức khỏe</span>
-                    </a>
-                </div>
-                <!-- Indicator -->
-                <div class="indicator">
-                    <div class="indicator-dot">
-                        <div class="indicator-ab"></div>
+            <?php
+            $categories = [['href' => '/category', 'icon' => 'all-icon.svg', 'label' => 'Tất cả'], ['href' => '#', 'icon' => 'food-icon.svg', 'label' => 'Ẩm thực'], ['href' => '#', 'icon' => 'travel-icon.svg', 'label' => 'Du lịch'], ['href' => '#', 'icon' => 'game-icon.svg', 'label' => 'Giải trí'], ['href' => '#', 'icon' => 'heart-icon.svg', 'label' => 'Sức khỏe'], ['href' => '#', 'icon' => 'study.svg', 'label' => 'Giáo dục', 'size' => true], ['href' => '#', 'icon' => 'fashion.svg', 'label' => 'Thời trang', 'size' => true], ['href' => '#', 'icon' => 'beatiful.svg', 'label' => 'Làm đẹp', 'size' => true]];
+            ?>
 
-
+            <div class="category-grid" id="categoryGrid">
+                <?php foreach ($categories as $cat): ?>
+                <a href="<?= htmlspecialchars($cat['href']) ?>" class="category-item">
+                    <div class="category-icon all">
+                        <img src="./images/<?= htmlspecialchars($cat['icon']) ?>"
+                            alt="<?= htmlspecialchars($cat['label']) ?>"
+                            <?= !empty($cat['size']) ? 'width="33px" height="32px"' : '' ?> />
                     </div>
+                    <span class="category-label"><?= htmlspecialchars($cat['label']) ?></span>
+                </a>
+                <?php endforeach; ?>
+            </div>
+            <!-- Indicator -->
+            <div class="indicator">
+                <div class="indicator-dot">
+                    <div class="indicator-ab" id="indicatorAb"></div>
                 </div>
-
             </div>
         </div>
     </div>
     {{-- Banner --}}
     <div class="banner">
-        <img src="./images/banner.png" alt="" style="width: 100%;">
-        <div class="indicator-banner">
-            <div class="dot-banner"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+        <div class="banner-container">
+            <div class="banner-slider" id="bannerSlider">
+                <div class="banner-slide">
+                    <img src="./images/banner.png" alt="Banner 1">
+                </div>
+                <div class="banner-slide">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop"
+                        alt="Banner 2">
+                </div>
+                <div class="banner-slide">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop"
+                        alt="Banner 3">
+                </div>
+                <div class="banner-slide">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=400&fit=crop"
+                        alt="Banner 4">
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Indicators -->
+        <div class="indicator-banner" id="indicators">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+            <div class="dot" data-slide="3"></div>
         </div>
     </div>
 
@@ -188,7 +199,7 @@
                 </div>
             </div>
             <div class="cart">
-                <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
+                <img src="./images/image-game1.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
                     <div class="brand-header">
                         <img src="./images/travel-icon1.svg" alt="" width="18px" height="18px">
@@ -242,7 +253,7 @@
                 </div>
             </div>
             <div class="cart">
-                <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
+                <img src="./images/image-game1.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
                     <div class="brand-header">
                         <img src="./images/hightland.svg" alt="" width="18px" height="18px">
@@ -297,7 +308,7 @@
                 </div>
             </div>
             <div class="cart">
-                <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
+                <img src="./images/image-game1.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
                     <div class="brand-header">
                         <img src="./images/hightland.svg" alt="" width="18px" height="18px">
@@ -351,7 +362,7 @@
                 </div>
             </div>
             <div class="cart">
-                <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
+                <img src="./images/image-game1.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
                     <div class="brand-header">
                         <img src="./images/hightland.svg" alt="" width="18px" height="18px">
@@ -406,7 +417,7 @@
                 </div>
             </div>
             <div class="cart">
-                <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
+                <img src="./images/image-game1.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
                     <div class="brand-header">
                         <img src="./images/hightland.svg" alt="" width="18px" height="18px">
@@ -461,7 +472,7 @@
                 </div>
             </div>
             <div class="cart">
-                <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
+                <img src="./images/image-game1.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
                     <div class="brand-header">
                         <img src="./images/hightland.svg" alt="" width="18px" height="18px">
@@ -516,7 +527,7 @@
                 </div>
             </div>
             <div class="cart">
-                <img src="./images/content.svg" alt="" style="padding-bottom: 8px" width="156px">
+                <img src="./images/image-game1.svg" alt="" style="padding-bottom: 8px" width="156px">
                 <div class="brand-item">
                     <div class="brand-header">
                         <img src="./images/hightland.svg" alt="" width="18px" height="18px">
@@ -585,3 +596,202 @@
 
 
 </html>
+<script>
+    class BannerSlider {
+        constructor() {
+            this.currentSlide = 0;
+            this.totalSlides = 4;
+            this.slider = document.getElementById('bannerSlider');
+            this.container = document.querySelector('.banner-container');
+            this.indicators = document.querySelectorAll('.dot');
+            this.autoSlideInterval = null;
+            this.autoSlideDelay = 5000; // 5 giây
+
+            // Drag properties
+            this.isDragging = false;
+            this.startX = 0;
+            this.currentX = 0;
+            this.initialTransform = 0;
+            this.dragThreshold = 50; // Minimum drag distance to trigger slide change
+
+            this.init();
+        }
+
+        init() {
+            // Event listeners cho indicators
+            this.indicators.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.goToSlide(index));
+            });
+
+            // Mouse drag support
+            this.addMouseDragSupport();
+
+            // Touch/swipe support
+            this.addTouchSupport();
+
+            // Auto slide
+            this.startAutoSlide();
+
+            // Pause auto slide on hover
+            this.container.addEventListener('mouseenter', () => this.stopAutoSlide());
+            this.container.addEventListener('mouseleave', () => this.startAutoSlide());
+        }
+
+        addMouseDragSupport() {
+            this.container.addEventListener('mousedown', (e) => {
+                this.isDragging = true;
+                this.startX = e.clientX;
+                this.initialTransform = -this.currentSlide * 25;
+                this.container.classList.add('dragging');
+
+                // Prevent text selection while dragging
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!this.isDragging) return;
+
+                e.preventDefault();
+                this.currentX = e.clientX;
+                const deltaX = this.currentX - this.startX;
+                const dragPercentage = (deltaX / this.container.offsetWidth) * 100;
+
+                // Update slider position while dragging
+                const newTransform = this.initialTransform + dragPercentage;
+                this.slider.style.transform = `translateX(${newTransform}%)`;
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (!this.isDragging) return;
+
+                this.isDragging = false;
+                this.container.classList.remove('dragging');
+
+                const deltaX = this.currentX - this.startX;
+
+                // Determine if drag was significant enough to change slide
+                if (Math.abs(deltaX) > this.dragThreshold) {
+                    if (deltaX > 0) {
+                        // Dragged right - go to previous slide
+                        this.prevSlide();
+                    } else {
+                        // Dragged left - go to next slide
+                        this.nextSlide();
+                    }
+                } else {
+                    // Snap back to current slide
+                    this.updateSlider();
+                }
+            });
+
+            // Prevent dragging images
+            this.container.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        }
+
+        goToSlide(slideIndex) {
+            this.currentSlide = slideIndex;
+            this.updateSlider();
+            this.updateIndicators();
+        }
+
+        nextSlide() {
+            this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+            this.updateSlider();
+            this.updateIndicators();
+        }
+
+        prevSlide() {
+            this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+            this.updateSlider();
+            this.updateIndicators();
+        }
+
+        updateSlider() {
+            // Re-enable transition
+            this.slider.style.transition = 'transform 0.5s ease-in-out';
+
+            const translateX = -this.currentSlide * 25; // 25% per slide
+            this.slider.style.transform = `translateX(${translateX}%)`;
+        }
+
+        updateIndicators() {
+            this.indicators.forEach((dot, index) => {
+                dot.classList.toggle('active', index === this.currentSlide);
+            });
+        }
+
+        startAutoSlide() {
+            this.stopAutoSlide();
+            this.autoSlideInterval = setInterval(() => {
+                if (!this.isDragging) { // Don't auto-slide while dragging
+                    this.nextSlide();
+                }
+            }, this.autoSlideDelay);
+        }
+
+        stopAutoSlide() {
+            if (this.autoSlideInterval) {
+                clearInterval(this.autoSlideInterval);
+                this.autoSlideInterval = null;
+            }
+        }
+
+        addTouchSupport() {
+            let startX = 0;
+            let startY = 0;
+            let endX = 0;
+            let endY = 0;
+
+            this.container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }, {
+                passive: true
+            });
+
+            this.container.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                endY = e.changedTouches[0].clientY;
+                this.handleSwipe();
+            }, {
+                passive: true
+            });
+
+            const handleSwipe = () => {
+                const deltaX = startX - endX;
+                const deltaY = startY - endY;
+
+                // Check if horizontal swipe is more significant than vertical
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                    if (deltaX > 0) {
+                        this.nextSlide(); // Swipe left - next slide
+                    } else {
+                        this.prevSlide(); // Swipe right - previous slide
+                    }
+                }
+            };
+
+            this.handleSwipe = handleSwipe;
+        }
+    }
+
+    // Initialize banner slider when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        new BannerSlider();
+    });
+    const grid = document.getElementById('categoryGrid');
+    const indicator = document.getElementById('indicatorAb');
+    const indicatorTrackWidth = 40; // bằng với .indicator-dot width
+    const indicatorWidth = 14; // bằng với .indicator-ab width
+
+    grid.addEventListener('scroll', () => {
+        const scrollLeft = grid.scrollLeft;
+        const maxScroll = grid.scrollWidth - grid.clientWidth;
+        const percent = scrollLeft / maxScroll;
+
+        const maxTranslate = indicatorTrackWidth - indicatorWidth;
+        indicator.style.left = `${percent * maxTranslate}px`;
+    });
+</script>

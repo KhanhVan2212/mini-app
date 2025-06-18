@@ -18,7 +18,7 @@ body {
     position: absolute;
     background-color: #ffc7c8;
     width: 100%;
-    height: 170px;
+    height: 160px;
     max-width: 450px;
     border-radius: 0px 0px 32px 32px;
 }
@@ -44,7 +44,7 @@ body {
     width: 61px;
     padding: 2px 6px;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.44);
     background: #0000002e;
@@ -57,7 +57,7 @@ body {
 
 .line-button {
     color: #ffffff70;
-    padding-bottom: 6px;
+    font-size: 13px;
 }
 
 .remove-icon {
@@ -114,9 +114,15 @@ body {
 
 .category-grid {
     display: flex;
-    justify-content: center;
     gap: 12px;
     margin-bottom: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none; /* Ẩn scrollbar cho Firefox */
+}
+
+.category-grid::-webkit-scrollbar {
+    display: none; /* Ẩn scrollbar cho Chrome/Safari */
 }
 
 .category-item {
@@ -145,7 +151,6 @@ body {
     line-height: 14px;
 }
 
-/* Indicator */
 .indicator {
     display: flex;
     justify-content: center;
@@ -153,16 +158,19 @@ body {
 
 .indicator-dot {
     position: relative;
-    width: 24px;
+    width: 40px; /* tăng chiều dài nếu cần mượt hơn */
     height: 4px;
     border-radius: 9999px;
-    background: var(--Background-Neutral-subtle, rgba(0, 0, 0, 0.11));
+    background: rgba(0, 0, 0, 0.11);
+    overflow: hidden;
 }
+
 .indicator-ab {
     position: absolute;
-    width: 14px;
-    left: -0.5px;
+    top: 0;
+    left: 0;
     height: 4px;
+    width: 14px;
     border-radius: 9999px;
     background: #db3d42;
 }
@@ -170,31 +178,87 @@ body {
 .banner {
     position: relative;
     padding: 16px 16px 0px 16px;
+    overflow: hidden;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.banner-slider {
+    display: flex;
+    width: 400%; /* 4 ảnh x 100% */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-slide {
+    width: 25%; /* 100% / 4 ảnh */
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .indicator-banner {
     position: absolute;
     gap: 2px;
-    bottom: 10px;
-    left: 46%;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-}
-
-.dot-banner {
-    width: 15px;
-    height: 4px;
-    flex-shrink: 0;
-    border-radius: 9999px;
-    background: #db3d42;
+    z-index: 10;
 }
 
 .dot {
     width: 4px;
     height: 4px;
-    border-radius: 9999px;
-    background: rgba(0, 0, 0, 0.32);
-    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 15px;
+    height: 4px;
+    border-radius: 4px;
+    background: #db3d42;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.dot.active:hover {
+    background: #c53439;
+}
+
+/* Drag cursor */
+.banner-container {
+    max-height: 172px;
+    cursor: grab;
+}
+
+.banner-container:active {
+    cursor: grabbing;
+}
+
+.banner-container.dragging {
+    cursor: grabbing;
+}
+
+.banner-container.dragging .banner-slider {
+    transition: none; /* Disable transition while dragging */
 }
 
 /* Food */
@@ -484,11 +548,11 @@ body {
 }
 
 .label.red {
-    color: #ef4444; /* text-red-500 */
+    color: #db3d42;
 }
 
 .label.gray {
-    color: #a3a3a3; /* text-neutral-400 */
+    color: #a3a3a3;
 }
 
 .price-info {
